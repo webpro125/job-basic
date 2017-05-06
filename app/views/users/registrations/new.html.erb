@@ -6,13 +6,25 @@
         <h2>Sign up </h2>
       </div>
       <%= f.error_notification %>
-
-      <div class="form-inputs">
-        <%= f.input :email, required: true, autofocus: true %>
-        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-        <%= f.input :password_confirmation, required: true %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.input :first_name, required: true, autofocus: true %>
+        </div>
+        <div class="col-md-6">
+          <%= f.input :last_name, required: true %>
+        </div>
       </div>
-
+      <%= f.input :username, required: true %>
+      <%= f.input :email, required: true %>
+      <%= f.input :zip_code, required: true %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+        </div>
+        <div class="col-md-6">
+          <%= f.input :password_confirmation, required: true %>
+        </div>
+      </div>
       <div class="form-actions">
         <%= f.button :submit, "Sign up" %>
       </div>

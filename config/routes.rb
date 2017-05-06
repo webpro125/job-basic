@@ -3,7 +3,7 @@ Rails.application.routes.draw do
       sign_in: 'login',
       sign_out: 'logout',
       sign_up: 'registration'
-  }, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
+  }, controllers: { registrations: 'users/registrations', sessions: 'users/sessions', passwords: 'users/passwords' }
 
   root 'home#index'
 
