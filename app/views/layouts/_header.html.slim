@@ -25,8 +25,34 @@ nav.navbar.navbar-default
               li.divider[role="separator"]
               li
                 = link_to 'Log out', destroy_user_session_path, method: :delete
+        - if admin_signed_in?
+          li.dropdown
+            a.dropdown-toggle[href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"]
+              = current_admin.full_name
+              span.caret
+            ul.dropdown-menu
+              li
+                a[href="#"]
+                  | Profile
+              li.divider[role="separator"]
+              li
+                = link_to 'Log out', destroy_admin_session_path, method: :delete
         - else
-          li
-            = link_to 'Log in', new_user_session_path
-          li
-            = link_to 'Sign up', new_user_registration_path
+          li.dropdown
+            a.dropdown-toggle[href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"]
+              | Log in
+              span.caret
+            ul.dropdown-menu
+              li
+                = link_to 'Log in As Regular User', new_user_session_path
+              li
+                = link_to 'Log in As Admin User', new_admin_session_path
+          li.dropdown
+            a.dropdown-toggle[href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"]
+              | Sign up
+              span.caret
+            ul.dropdown-menu
+              li
+                = link_to 'Sign up as Regular User', new_admin_registration_path
+              li
+                = link_to 'Sign up As Admin User', new_admin_registration_path
