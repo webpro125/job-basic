@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title
+      | Job
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.css")
+    = yield :style
+    /= javascript_include_tag "https://www.google.com/jsapi"
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js")
+    = yield :javascript
+    = csrf_meta_tags
+  body[class="#{(user_signed_in?) ? 'header-fixed header-fixed-space' : 'header-fixed '}"]
+    = yield :style
+    - if devise_controller?
+      = yield
+    - else
+      = render 'layouts/header'
+      = yield
