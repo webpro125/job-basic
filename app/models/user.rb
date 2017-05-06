@@ -6,9 +6,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :username, length: { in: 2..32 }, presence: true, uniqueness: true,
-            format: { with: RegexConstants::Words::ONLY,
-                      message: 'Special letters are not allowed to input' }
+  # validates :username, length: { in: 2..32 }, presence: true, uniqueness: true,
+  #           format: { with: RegexConstants::Words::ONLY,
+  #                     message: 'Special letters are not allowed to input' }
 
   validates :first_name, length: { in: 2..24 },
             format: { with: RegexConstants::Letters::AND_NUMBERS,
