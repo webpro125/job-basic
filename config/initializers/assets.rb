@@ -12,6 +12,8 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.precompile += [
     'home.css',
+    'users/sessions.scss',
+    'users/registrations.scss',
 ]
 
 Rails.application.config.assets.precompile += [
