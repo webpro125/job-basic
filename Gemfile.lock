@@ -100,6 +100,8 @@ GEM
       thor (~> 0.14)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     groupdate (3.2.0)
@@ -262,6 +264,7 @@ DEPENDENCIES
   devise (~> 4.2)
   figaro (~> 1.1, >= 1.1.1)
   font-awesome-rails (~> 4.7, >= 4.7.0.1)
+  friendly_id (~> 5.1.0)
   groupdate
   jbuilder (~> 2.5)
   jquery-rails
