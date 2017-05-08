@@ -1,8 +1,9 @@
 .container
+  = render 'layouts/flash'
   - if user_signed_in?
     .row.margin-bottom-20
       .col-md-12
-        - if current_user.project_applies.collect(&:project_id).include?(@project.id)
+        - if policy(@project).apply_possible?
           button.btn.btn-default.btn-lg[Disabled] You already Applied
         - else
           = link_to 'Apply', new_project_project_apply_path(@project), class: 'btn btn-primary pull-right'

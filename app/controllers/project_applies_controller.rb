@@ -8,10 +8,12 @@ class ProjectAppliesController < ApplicationController
 
   def new
     @project_apply = @project.project_applies.build
+    authorize @project_apply
   end
 
   def create
     @project_apply = @project.project_applies.build(project_apply_params)
+    authorize @project_apply
     @project_apply.user_id = current_user.id
 
     if @project_apply.save
