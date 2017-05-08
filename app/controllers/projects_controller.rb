@@ -27,6 +27,10 @@ class ProjectsController < ApplicationController
     redirect_to projects_path, notice: 'You deleted successfully!'
   end
 
+  def search
+
+  end
+  
   private
 
   def project_params

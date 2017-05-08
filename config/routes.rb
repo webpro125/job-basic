@@ -12,6 +12,14 @@ Rails.application.routes.draw do
       sign_up: 'registration'
   }, controllers: { registrations: 'admins/registrations', sessions: 'admins/sessions', passwords: 'admins/passwords' }
 
+  authenticated :admin do
+    root 'projects#index'
+  end
+
+  authenticated :user do
+    root 'projects#search'
+  end
+
   root 'home#index'
 
   resources :projects, path: '/job' do

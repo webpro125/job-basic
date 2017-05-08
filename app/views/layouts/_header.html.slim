@@ -25,7 +25,7 @@ nav.navbar.navbar-default
               li.divider[role="separator"]
               li
                 = link_to 'Log out', destroy_user_session_path, method: :delete
-        - if admin_signed_in?
+        - elsif admin_signed_in?
           li
             = link_to 'Post a Job', new_project_path
           li.dropdown
