@@ -34,8 +34,7 @@ nav.navbar.navbar-default
               span.caret
             ul.dropdown-menu
               li
-                a[href="#"]
-                  | Profile
+                = link_to 'My Job', projects_path
               li.divider[role="separator"]
               li
                 = link_to 'Log out', destroy_admin_session_path, method: :delete
