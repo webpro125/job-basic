@@ -30,6 +30,8 @@ class ProjectsController < ApplicationController
   def search
     @q = Project.search(params[:q])
     @q.sorts = 'id asc' if @q.sorts.empty?
+    # @cars = @q.result.page(params[:page]).per(5)
+    @projects = @q.result if params[:q].present?
   end
 
   private

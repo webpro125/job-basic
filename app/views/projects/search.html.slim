@@ -1,0 +1,19 @@
+h1.text-center Search Jobs
+.container.content-xs
+  = search_form_for @q, url: search_projects_path do |f|
+    .row.margin-bottom-20
+      .col-md-4
+        = f.label 'Title'
+        = f.search_field :title_cont, class: 'form-control'
+      .col-md-4
+        = f.label 'Category'
+        = f.search_field :category_cont, class: 'form-control'
+      .col-md-4
+        = f.label 'Company Name'
+        = f.search_field :company_name_cont, class: 'form-control'
+    .row
+      .col-md-12.text-right
+        = f.submit 'Search', class: 'btn btn-primary'
+  - if !@projects.nil? && params[:q].present?
+    h2 Search Result
+    = render @projects
