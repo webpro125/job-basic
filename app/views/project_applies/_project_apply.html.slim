@@ -3,3 +3,5 @@
     h3.margin-bottom-20= 'Project Title: ' + project_apply.project.title
     h5 Your Qualification
     p= project_apply.description
+    h5
+      = 'Applied Date: ' + project_apply.created_at.to_date.to_s
