@@ -1,0 +1,13 @@
+.container
+  - @projects.each do |project|
+    .panel.panel-default
+      .panel-body
+        = link_to project_path(project) do
+          h3= project.title
+        h5
+          | Company:
+          = ' ' + project.company_name
+        h5
+          | Category:
+          = ' ' + project.category
+        p= project.description

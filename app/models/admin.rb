@@ -12,4 +12,6 @@ class Admin < ApplicationRecord
             format: { with: RegexConstants::Words::AND_SPECIAL,
                       message: 'Special letters are not allowed to input' }
   validates :zip_code, presence: true
+
+  has_many :projects
 end

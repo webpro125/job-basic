@@ -26,6 +26,8 @@ nav.navbar.navbar-default
               li
                 = link_to 'Log out', destroy_user_session_path, method: :delete
         - if admin_signed_in?
+          li
+            = link_to 'Post a Job', new_project_path
           li.dropdown
             a.dropdown-toggle[href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"]
               = current_admin.full_name

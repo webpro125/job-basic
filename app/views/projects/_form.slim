@@ -1,0 +1,9 @@
+= simple_form_for @project, html: {id: 'project_form'} do |f|
+  = f.error_notification
+  = f.input :title, required: true
+  = f.input :company_name, required: true
+  = f.input :category, required: true
+  = f.input :description, required: true
+
+  = button_tag type: 'submit', class: 'btn btn-primary pull-right' do
+    = (content_tag(:i, '', {class: 'fa fa-check-circle-o'}) + ' Save & Update').html_safe

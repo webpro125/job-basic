@@ -7,7 +7,7 @@ class CreateProjects < ActiveRecord::Migration[5.0]
       t.string :category, max: 128
       t.date :start_date
       t.date :end_date
-      t.references :user, index: true
+      t.references :admin, index: true
       t.timestamps
     end
   end
