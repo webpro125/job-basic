@@ -1,0 +1,15 @@
+.container
+  h2.text-center= @project.title
+  .row.margin-bottom-20
+    .col-md-8
+      h4= 'Company: ' + @project.company_name
+      h4= 'Category: ' + @project.category
+      h4 Description
+      p= @project.description
+    .col-md-4
+      h4= 'Posted by ' + @project.admin.full_name
+      h5= 'Posted Date: ' + @project.created_at.to_date.to_s
+  .row
+    .col-md-12
+      h3 Apply
+      = render 'form'

@@ -1,9 +1,9 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_admin!, except: [:search]
+  before_action :authenticate_admin!, except: [:search, :show]
   before_action :authenticate_user!, only: [:search]
-
+  before_action :auth_a_user!, only: [:show]
   def index
-    @projects = Project.order(created_at: :desc)
+    @projects = current_admin.projects.order(created_at: :desc)
   end
   def new
     @project = current_admin.projects.build

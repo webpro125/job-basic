@@ -4,6 +4,7 @@ class Project < ApplicationRecord
   friendly_id :title, use: [:slugged, :finders]
 
   belongs_to :admin
+  has_many :project_applies
 
   validates :title, length: { in: 2..128 },
             format: { with: RegexConstants::Letters::AND_NUMBERS,

@@ -17,10 +17,12 @@ Rails.application.config.assets.precompile += [
     'admins/sessions.css',
     'admins/registrations.css',
     'projects.css',
+    'project_applies.css',
 
 ]
 
 Rails.application.config.assets.precompile += [
     'home.js',
     'projects.js',
+    'project_applies.js',
 ]
