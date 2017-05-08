@@ -3,6 +3,7 @@
     .panel.panel-body
       h3 Project Title
       p= @project.title
+      p= 'Date Range: ' + @project.start_date.to_s + ' - ' + @project.end_date.to_s
 
   .panel.panel-default
     .panel.panel-body

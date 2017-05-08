@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
   def create
     @project = current_admin.projects.build(project_params)
     if @project.save
-      redirect_to projects_path, notice: 'You posted Project successfully'
+      redirect_to projects_path, notice: 'You posted Project successfully!'
     else render :new
     end
   end
@@ -21,9 +21,14 @@ class ProjectsController < ApplicationController
     puts @project
   end
 
+  def destroy
+    Project.find(params[:id]).destroy
+    redirect_to projects_path, notice: 'You deleted successfully!'
+  end
+
   private
 
   def project_params
-    params.require(:project).permit( :slug, :admin_id, :title, :company_name, :description, :category)
+    params.require(:project).permit( :slug, :start_date, :end_date, :admin_id, :title, :company_name, :description, :category)
   end
 end

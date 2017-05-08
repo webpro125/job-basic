@@ -12,4 +12,8 @@ class Project < ApplicationRecord
   validates :category, presence: true
   validates :description, length: {in: 10..1000}
 
+  validates_date :end_date, :after => :start_date # Method symbol
+
+  validates_date :start_date, :on => :create, :on_or_after => :today
+
 end
