@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!, only: [:search]
 
   def index
-    @projects = Project.all
+    @projects = Project.order(created_at: :desc)
   end
   def new
     @project = current_admin.projects.build
@@ -28,9 +28,10 @@ class ProjectsController < ApplicationController
   end
 
   def search
-
+    @q = Project.search(params[:q])
+    @q.sorts = 'id asc' if @q.sorts.empty?
   end
-  
+
   private
 
   def project_params
