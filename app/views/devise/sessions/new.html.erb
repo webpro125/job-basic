@@ -3,7 +3,11 @@
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html:{ class: 'reg-page'}) do |f| %>
       <div class="reg-header">
-        <h2>Log in </h2>
+        <% if resource_name.to_s == 'user' %>
+          <h2>Regular User Log in </h2>
+        <% else %>
+            <h2>Admin User Log in </h2>
+        <% end %>
       </div>
       <%= render 'layouts/flash' %>
       <%= f.input :email, required: false, autofocus: true %>
